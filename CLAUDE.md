@@ -1,115 +1,109 @@
-# MazyOS — Sistema operacional do negócio
+# JumperFour Tecnologia — MazyOS
 
-Sua empresa roda em cima desse arquivo. Aqui ficam as regras de operação
-do MazyOS — como o Claude lê o contexto, aprende com correções, mantém
-tudo atualizado e cria skills novas conforme a operação evolui.
+Esse workspace é a operação do negócio. Aqui ficam as regras de como
+o Claude lê o contexto, aprende com correções e executa tarefas no
+padrão da JumperFour.
 
-Esse arquivo é editável. Quando o `/instalar` rodar, ele complementa o
-final dessa página com as regras específicas do seu negócio.
+## O que é esse workspace
 
----
+Operação da JumperFour Tecnologia. Projetos de engenharia, materiais
+comerciais, conteúdo institucional e ferramentas internas — tudo
+organizado por área, com processos e entregas documentados.
 
-## Contexto do negócio
+**Estrutura de pastas:**
+- `_memoria/` — quem é a empresa, como falamos, foco atual
+- `identidade/` — marca aplicada em tudo que o sistema gera
+- `saidas/` — entregas geradas (site, propostas, materiais)
+- `dados/` — arquivos a analisar
+- `marketing/` — campanhas, conteúdo, mídia paga
+- `scripts/` — automações e scripts internos
 
-No início de toda conversa, ler os seguintes arquivos (quando existirem
-e estiverem preenchidos):
+## Sobre a empresa
 
-1. `_memoria/empresa.md` — quem é o usuário, o que faz, como funciona o negócio
-2. `_memoria/preferencias.md` — tom de voz, estilo de escrita, o que evitar
-3. `_memoria/estrategia.md` — foco atual, prioridades, prazos
+JumperFour Tecnologia é uma empresa de engenharia e tecnologia B2B.
+Atuamos em Automação Predial, Segurança Eletrônica, Infraestrutura de TI
+e Carregadores Veiculares Elétricos, atendendo ambientes de Missão Crítica:
+aeroportos, hospitais, data centers, arenas, portos e indústrias.
+Equipe de engenheiros especializados, muitos ex-Honeywell, com capacidade
+de projeto, implantação, comissionamento e manutenção 24/7.
 
-Usar essas informações como base pra qualquer resposta ou decisão. Ao
-sugerir prioridades, formatos ou abordagens, considerar o foco atual
-descrito em `estrategia.md`.
+## Setores e frentes
 
-Pra qualquer tarefa visual (carrossel, post, landing page), consultar
-`identidade/design-guide.md` como referência de estilo.
+- **Comercial:** propostas técnicas, apresentações, materiais de venda
+- **Engenharia:** projetos executivos, documentação técnica, SOPs
+- **Marketing:** site institucional, conteúdo, presença digital
+- **Operações:** contratos de manutenção, monitoramento remoto, processos internos
 
-Não é necessário listar o que foi lido nem confirmar a leitura. Apenas
-usar o contexto naturalmente.
+## O que mais fazemos aqui
 
----
+- Propostas técnicas e comerciais para licitações e clientes diretos
+- Site e portal institucional com simulação de monitoramento BMS/SCA
+- Materiais de apresentação para calls e reuniões de vendas
+- Conteúdo institucional com linguagem técnica e de autoridade
 
-## Fluxo de trabalho
+## Tom de voz
 
-Antes de executar qualquer tarefa, verificar se existe skill relevante
-em `.claude/skills/`. Se encontrar, seguir as instruções da skill. Se
-não encontrar, executar a tarefa normalmente.
+Corporativo, técnico e seguro. Passa solidez de engenharia — dados
+concretos, referências a normas, foco em Missão Crítica e Life Safety.
+Interno pode ser mais direto; externo mantém autoridade e credibilidade.
 
-Ao concluir uma tarefa que não tinha skill mas parece repetível (o
-usuário provavelmente vai pedir de novo no futuro), perguntar:
+Evitar: linguagem de guru, promessas vagas, emojis em documentos formais,
+termos como "alavancar", "sinergia", "simples e fácil".
 
-> "Isso pode virar uma skill pra próxima vez. Quer que eu crie?"
+## Regras do sistema
 
-Não perguntar pra tarefas pontuais ou perguntas simples. Só quando o
-padrão de repetição for claro.
-
----
+- Contexto do negócio: ler `_memoria/empresa.md`, `_memoria/preferencias.md`
+  e `_memoria/estrategia.md` antes de qualquer resposta ou entrega
+- Identidade visual: ler `identidade/design-guide.md` antes de qualquer
+  tarefa visual (carrossel, site, proposta, slide)
+- Skills: verificar `.claude/skills/` antes de executar qualquer tarefa —
+  se existir skill relevante, seguir ela
+- Entregas do site: salvar em `saidas/jumperfour-site/`
+- Propostas e materiais comerciais: salvar em `saidas/`
+- Ao corrigir algo com valor duradouro, perguntar se salva na memória
+- Ao concluir tarefa que mudou contexto relevante, perguntar se atualiza
+- Ao concluir tarefa sem skill mas claramente repetível, perguntar se vira skill
 
 ## Aprender com correções
 
-Quando o usuário corrigir algo, melhorar uma resposta ou dar uma
-instrução que parece permanente (frases como "na verdade é assim", "não
-faça mais isso", "prefiro assim", "sempre que...", "evita...", "da
-próxima vez..."), perguntar:
+Quando o usuário corrigir algo ou dar instrução permanente ("sempre que...",
+"evita...", "da próxima vez...", "prefiro assim"), perguntar:
 
 > "Quer que eu salve isso pra não precisar repetir?"
 
-Se sim, identificar onde faz mais sentido salvar:
-
-- **Sobre o negócio** (clientes, serviços, mercado) → `_memoria/empresa.md`
-- **Sobre preferências e estilo** (tom de voz, formato, o que evitar) → `_memoria/preferencias.md`
-- **Sobre prioridades e foco** (projetos, metas, prazos) → `_memoria/estrategia.md`
-- **Regra de comportamento nessa pasta** → próprio `CLAUDE.md`
-
-Salvar com uma linha nova clara, sem reformatar o arquivo inteiro.
-Confirmar mostrando a linha adicionada.
-
-Não perguntar se a correção for óbvia de contexto imediato (ex: "na
-verdade o arquivo se chama X"). Só perguntar quando a informação tiver
-valor duradouro.
-
----
+Se sim, identificar onde salvar:
+- Sobre o negócio → `_memoria/empresa.md`
+- Sobre estilo e tom → `_memoria/preferencias.md`
+- Sobre prioridades → `_memoria/estrategia.md`
+- Regra de comportamento → `CLAUDE.md`
 
 ## Manter contexto atualizado
 
-Ao terminar uma tarefa que mudou algo relevante (cliente novo, skill
-nova, mudança de foco, processo novo, ferramenta instalada, estrutura
-alterada), perguntar:
+Ao terminar tarefa que mudou algo relevante (cliente novo, skill nova,
+mudança de foco, ferramenta instalada), perguntar:
 
 > "Isso mudou algo no teu contexto. Quer que eu atualize a memória?"
 
-Se sim, identificar o que atualizar:
+Mostrar o que vai mudar antes de salvar. Não reformatar o arquivo inteiro.
 
-- **Cliente, serviço, ferramenta, equipe** → `_memoria/empresa.md`
-- **Mudança de prioridade ou foco** → `_memoria/estrategia.md`
-- **Tom ou estilo** → `_memoria/preferencias.md`
-- **Pasta, regra de organização, skill criada** → `CLAUDE.md`
-- **Visual (cores, fontes, logo)** → `identidade/design-guide.md`
-
-Mostrar o que vai mudar antes de salvar. Não reformatar o arquivo
-inteiro, só adicionar ou editar a linha relevante.
-
-**Quando NÃO perguntar:**
-- Tarefas pontuais sem impacto no contexto (escrever um email avulso, criar um post)
-- Perguntas simples ou conversas sem ação
-- Mudanças já salvas pelo bloco "Aprender com correções"
-
-**Dica:** rode `/atualizar` pra uma varredura completa quando houver dúvida.
-
----
+Não perguntar em tarefas pontuais, perguntas simples ou mudanças já salvas.
+Rode `/atualizar` pra uma varredura completa quando houver dúvida.
 
 ## Criação de skills
 
-Quando o usuário pedir skill nova:
-
-1. Verificar se existe template relevante em `templates/skills/`. Se
-   existir, usar como base e adaptar pro contexto
-2. Perguntar se é específica desse projeto ou útil em qualquer:
-   - Específica → `.claude/skills/nome-da-skill/SKILL.md` (local)
-   - Universal → `~/.claude/skills/nome-da-skill/SKILL.md` (global)
-3. Ler `_memoria/empresa.md` e `_memoria/preferencias.md` pra calibrar
-   o conteúdo da skill ao contexto do negócio
-4. Se a skill precisar de arquivos de apoio (templates, exemplos),
-   criar dentro da pasta da skill
+1. Verificar se existe template em `templates/skills/`
+2. Perguntar se é específica desse projeto ou universal:
+   - Específica → `.claude/skills/nome-da-skill/SKILL.md`
+   - Universal → `~/.claude/skills/nome-da-skill/SKILL.md`
+3. Calibrar com `_memoria/empresa.md` e `_memoria/preferencias.md`
+4. Criar arquivos de apoio dentro da pasta da skill se necessário
 5. Seguir o fluxo da skill-creator nativa do Claude Code
+
+## Ferramentas conectadas
+
+- [ ] Notion
+- [ ] Gmail
+- [ ] Google Calendar
+- [ ] Google Ads
+- [ ] Meta Ads
+- [ ] Instagram (Meta Graph API — skill `/aprovar-post`)

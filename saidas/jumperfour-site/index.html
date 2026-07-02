@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JumperFour Tecnologia — Automação, Segurança e Infraestrutura</title>
+  <meta name="description" content="JumperFour é a parceira tecnológica para soluções de automação de edificações, segurança eletrônica, infraestrutura de TI e carregamento veicular elétrico. +10 anos de experiência.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="fiberCanvas" aria-hidden="true"></canvas>
+
+  <!-- ═══════════════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════════════ -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#hero" class="logo" aria-label="JumperFour Home">
+        <img src="logo.png" alt="JumperFour" class="logo-img">
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Menu principal">
+        <a href="#empresa" class="nav-link">A Empresa</a>
+        <a href="#servicos" class="nav-link">Serviços</a>
+        <a href="#metodologia" class="nav-link">Metodologia</a>
+        <a href="#atuacao" class="nav-link">Atuação</a>
+        <a href="#cases" class="nav-link">Cases</a>
+        <a href="#portal-login" class="nav-link nav-login-btn" id="openLoginBtn">Área do Cliente</a>
+        <a href="#contato" class="nav-cta">Fale conosco</a>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="hero-glow"></div>
+    </div>
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Tecnologia · Qualidade · Compromisso
+      </div>
+      <h1 class="hero-title">
+        Sua edificação,<br>
+        <span class="gradient-text">inteligente e segura.</span>
+      </h1>
+      <p class="hero-subtitle">
+        Somos o parceiro tecnológico que sua empresa precisa para automação de edificações, segurança eletrônica, infraestrutura de TI e carregamento elétrico. Mais de 10 anos transformando ambientes complexos em espaços eficientes.
+      </p>
+      <div class="hero-actions">
+        <a href="#contato" class="btn-primary">
+          Falar com um analista
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#servicos" class="btn-ghost">Ver soluções</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">+10</span>
+          <span class="stat-label">Anos de experiência</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">500+</span>
+          <span class="stat-label">Projetos entregues</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Conformidade normativa</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator" aria-hidden="true">
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       CLIENTES / SETORES — TICKER
+  ═══════════════════════════════════════════════════ -->
+  <section class="ticker-section" aria-label="Setores de atuação">
+    <div class="ticker-track">
+      <div class="ticker-content">
+        <span>Aeroportos</span>
+        <span class="ticker-dot">✦</span>
+        <span>Hospitais</span>
+        <span class="ticker-dot">✦</span>
+        <span>Data Centers</span>
+        <span class="ticker-dot">✦</span>
+        <span>Edifícios Corporativos</span>
+        <span class="ticker-dot">✦</span>
+        <span>Portos</span>
+        <span class="ticker-dot">✦</span>
+        <span>Indústrias</span>
+        <span class="ticker-dot">✦</span>
+        <span>Laboratórios</span>
+        <span class="ticker-dot">✦</span>
+        <span>Arenas Esportivas</span>
+        <span class="ticker-dot">✦</span>
+        <span>Farmacêuticas</span>
+        <span class="ticker-dot">✦</span>
+        <span>Túneis</span>
+        <span class="ticker-dot">✦</span>
+        <!-- Duplicated for infinite loop -->
+        <span>Aeroportos</span>
+        <span class="ticker-dot">✦</span>
+        <span>Hospitais</span>
+        <span class="ticker-dot">✦</span>
+        <span>Data Centers</span>
+        <span class="ticker-dot">✦</span>
+        <span>Edifícios Corporativos</span>
+        <span class="ticker-dot">✦</span>
+        <span>Portos</span>
+        <span class="ticker-dot">✦</span>
+        <span>Indústrias</span>
+        <span class="ticker-dot">✦</span>
+        <span>Laboratórios</span>
+        <span class="ticker-dot">✦</span>
+        <span>Arenas Esportivas</span>
+        <span class="ticker-dot">✦</span>
+        <span>Farmacêuticas</span>
+        <span class="ticker-dot">✦</span>
+        <span>Túneis</span>
+        <span class="ticker-dot">✦</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       A EMPRESA
+  ═══════════════════════════════════════════════════ -->
+  <section class="section empresa-section" id="empresa">
+    <div class="container">
+      <div class="empresa-grid">
+        <div class="empresa-text reveal">
+          <div class="section-label">A EMPRESA</div>
+          <h2 class="section-title">Inovação e qualidade estão presentes em <span class="text-green">todas as nossas ações.</span></h2>
+          <p class="section-body">
+            A JumperFour nasceu para ser o parceiro tecnológico em soluções de automação de edificações, segurança eletrônica, infraestrutura de TI e carregamento de veículos elétricos.
+          </p>
+          <p class="section-body">
+            Somos apaixonados por tecnologia e estamos sempre à procura das melhores soluções. Temos um time multidisciplinar de técnicos, engenheiros e analistas altamente capacitados, prontos para suportar sua empresa com alto nível de serviço em implantação e manutenção de sistemas.
+          </p>
+          <div class="empresa-pillars">
+            <div class="pillar">
+              <div class="pillar-icon">⚡</div>
+              <div>
+                <strong>Inovação</strong>
+                <p>Sempre na vanguarda das melhores tecnologias do mercado</p>
+              </div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-icon">🛡</div>
+              <div>
+                <strong>Qualidade</strong>
+                <p>Serviços aderentes às normas técnicas e boas práticas</p>
+              </div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-icon">🤝</div>
+              <div>
+                <strong>Compromisso</strong>
+                <p>Time sempre ao lado do cliente, do projeto à manutenção</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="empresa-visual reveal reveal-delay">
+          <div class="visual-card main-card">
+            <div class="card-glow"></div>
+            <div class="visual-icon-grid">
+              <div class="vi-item">
+                <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="#26c45b" stroke-width="1.5"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+                <span>Automação</span>
+              </div>
+              <div class="vi-item">
+                <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="#26c45b" stroke-width="1.5"><path d="M15 10l4.553-2.069A1 1 0 0121 8.882V15a1 1 0 01-.553.894L16 18M9 10l-4.553-2.069A1 1 0 003 8.882V15a1 1 0 00.553.894L8 18m1-8v8m6-8v8m-3-8v8"/></svg>
+                <span>CFTV</span>
+              </div>
+              <div class="vi-item">
+                <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="#26c45b" stroke-width="1.5"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                <span>Controle</span>
+              </div>
+              <div class="vi-item">
+                <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="#26c45b" stroke-width="1.5"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                <span>Elétrico</span>
+              </div>
+              <div class="vi-item">
+                <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="#26c45b" stroke-width="1.5"><path d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/></svg>
+                <span>SDAI</span>
+              </div>
+              <div class="vi-item">
+                <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="#26c45b" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/><circle cx="12" cy="12" r="10"/></svg>
+                <span>BMS</span>
+              </div>
+            </div>
+            <div class="card-label">Ecossistema JumperFour</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       SERVIÇOS
+  ═══════════════════════════════════════════════════ -->
+  <section class="section servicos-section" id="servicos">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">SERVIÇOS</div>
+        <h2 class="section-title">Soluções completas para <span class="text-green">edificações inteligentes.</span></h2>
+        <p class="section-subtitle">Implantação e manutenção de sistemas de automação e segurança eletrônica para os ambientes mais exigentes do mercado.</p>
+      </div>
+
+      <div class="servicos-grid">
+
+        <div class="servico-card reveal" id="card-sdai">
+          <div class="servico-num">01</div>
+          <div class="servico-icon">
+            <svg width="36" height="36" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/><path d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"/></svg>
+          </div>
+          <h3>SDAI</h3>
+          <p class="servico-full">Sistema de Detecção e Alarme de Incêndio</p>
+          <p class="servico-desc">Detecção precoce, alarme e controle de incêndio em edificações de alto risco. Projetos executivos, instalação e manutenção.</p>
+          <div class="servico-tags">
+            <span>Detecção</span><span>Alarme</span><span>NFPA</span>
+          </div>
+        </div>
+
+        <div class="servico-card reveal" id="card-sca">
+          <div class="servico-num">02</div>
+          <div class="servico-icon">
+            <svg width="36" height="36" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          </div>
+          <h3>SCA</h3>
+          <p class="servico-full">Sistema de Controle de Acesso</p>
+          <p class="servico-desc">Controle inteligente de acessos físicos com biometria, cartão e tecnologia IP, integrado ao BMS e CFTV.</p>
+          <div class="servico-tags">
+            <span>Biometria</span><span>RFID</span><span>IP</span>
+          </div>
+        </div>
+
+        <div class="servico-card reveal" id="card-cftv">
+          <div class="servico-num">03</div>
+          <div class="servico-icon">
+            <svg width="36" height="36" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M15 10l4.553-2.069A1 1 0 0121 8.882V15a1 1 0 01-.553.894L16 18M5 18a2 2 0 01-2-2V8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5z"/></svg>
+          </div>
+          <h3>CFTV</h3>
+          <p class="servico-full">Circuito Fechado de Televisão</p>
+          <p class="servico-desc">Vigilância contínua com câmeras IP de alta resolução, analytics inteligente e monitoramento remoto 24/7.</p>
+          <div class="servico-tags">
+            <span>IP</span><span>4K</span><span>Analytics</span>
+          </div>
+        </div>
+
+        <div class="servico-card reveal" id="card-bms">
+          <div class="servico-num">04</div>
+          <div class="servico-icon">
+            <svg width="36" height="36" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+          </div>
+          <h3>BMS</h3>
+          <p class="servico-full">Building Management System</p>
+          <p class="servico-desc">Gerenciamento centralizado de todos os sistemas da edificação — HVAC, energia, iluminação e segurança em uma única plataforma.</p>
+          <div class="servico-tags">
+            <span>BACnet</span><span>Modbus</span><span>SNMP</span>
+          </div>
+        </div>
+
+        <div class="servico-card reveal" id="card-ebi">
+          <div class="servico-num">05</div>
+          <div class="servico-icon">
+            <svg width="36" height="36" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+          </div>
+          <h3>EBI Honeywell</h3>
+          <p class="servico-full">Enterprise Buildings Integrator</p>
+          <p class="servico-desc">Parceiro oficial Honeywell para implantação e manutenção da plataforma EBI — o sistema de gestão predial mais robusto do mercado.</p>
+          <div class="servico-tags">
+            <span>Honeywell</span><span>SCADA</span><span>Integração</span>
+          </div>
+        </div>
+
+        <div class="servico-card reveal" id="card-ev">
+          <div class="servico-num">06</div>
+          <div class="servico-icon">
+            <svg width="36" height="36" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3>Carregadores EV</h3>
+          <p class="servico-full">Infraestrutura de Carregamento Elétrico</p>
+          <p class="servico-desc">Projeto e instalação de estações de carregamento para veículos elétricos em estacionamentos corporativos e condomínios.</p>
+          <div class="servico-tags">
+            <span>AC/DC</span><span>Smart Charging</span><span>OCPP</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       METODOLOGIA
+  ═══════════════════════════════════════════════════ -->
+  <section class="section metodologia-section" id="metodologia">
+    <div class="metodologia-bg">
+      <div class="met-glow-1"></div>
+      <div class="met-glow-2"></div>
+    </div>
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">METODOLOGIA</div>
+        <h2 class="section-title">Do projeto à operação, <span class="text-green">sem falhas.</span></h2>
+        <p class="section-subtitle">Qualidade, prazo e inovação são os pilares da nossa metodologia. Seja para novas instalações, existentes ou estudos de melhoria.</p>
+      </div>
+
+      <div class="metodologia-steps">
+        <div class="met-step reveal">
+          <div class="met-step-num">01</div>
+          <div class="met-step-connector"></div>
+          <div class="met-step-body">
+            <div class="met-icon">
+              <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+            </div>
+            <h3>Implantação</h3>
+            <p>Elaboração do projeto executivo, escolha das melhores soluções e instalação por time de técnicos, analistas e engenheiros especializados.</p>
+          </div>
+        </div>
+
+        <div class="met-step reveal reveal-delay">
+          <div class="met-step-num">02</div>
+          <div class="met-step-connector"></div>
+          <div class="met-step-body">
+            <div class="met-icon">
+              <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3>Comissionamento</h3>
+            <p>Garantia de que o sistema implementado atende a todos os requisitos de escopo, qualidade e normas. Documentação completa entregue ao cliente.</p>
+          </div>
+        </div>
+
+        <div class="met-step reveal reveal-delay-2">
+          <div class="met-step-num">03</div>
+          <div class="met-step-body">
+            <div class="met-icon">
+              <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <h3>Manutenção</h3>
+            <p>Monitoramento remoto contínuo, diagnósticos preventivos, identificação de melhorias e suporte local com técnicos de campo. Disruptivo e inovador.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       ATUAÇÃO
+  ═══════════════════════════════════════════════════ -->
+  <section class="section atuacao-section" id="atuacao">
+    <div class="container">
+      <div class="atuacao-grid">
+        <div class="atuacao-text reveal">
+          <div class="section-label">ATUAÇÃO</div>
+          <h2 class="section-title">Presentes nos projetos <span class="text-green">mais desafiadores.</span></h2>
+          <p class="section-body">
+            Atuamos nos segmentos comercial, industrial e corporativo, com principais atividades em consultoria, execução de projetos, comissionamento e suporte em sistemas de automação e segurança eletrônica.
+          </p>
+          <p class="section-body">
+            Nossa equipe tem experiência comprovada em projetos de implantação e serviços nos ambientes mais exigentes do País.
+          </p>
+          <a href="#contato" class="btn-primary mt-32">
+            Falar com um especialista
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="atuacao-sectors reveal reveal-delay">
+          <div class="sector-card">
+            <div class="sector-icon">✈</div>
+            <span>Aeroportos</span>
+          </div>
+          <div class="sector-card">
+            <div class="sector-icon">🚢</div>
+            <span>Portos</span>
+          </div>
+          <div class="sector-card highlight">
+            <div class="sector-icon">🏢</div>
+            <span>Edifícios Corporativos</span>
+          </div>
+          <div class="sector-card">
+            <div class="sector-icon">🏥</div>
+            <span>Hospitais</span>
+          </div>
+          <div class="sector-card">
+            <div class="sector-icon">💾</div>
+            <span>Data Centers</span>
+          </div>
+          <div class="sector-card highlight">
+            <div class="sector-icon">🔬</div>
+            <span>Laboratórios</span>
+          </div>
+          <div class="sector-card">
+            <div class="sector-icon">🏟</div>
+            <span>Arenas Esportivas</span>
+          </div>
+          <div class="sector-card">
+            <div class="sector-icon">💊</div>
+            <span>Farmacêuticas</span>
+          </div>
+          <div class="sector-card">
+            <div class="sector-icon">🏭</div>
+            <span>Indústrias</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       PARCEIROS
+  ═══════════════════════════════════════════════════ -->
+  <section class="section parceiros-section" id="parceiros">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">PARCEIROS</div>
+        <h2 class="section-title">Tecnologia de <span class="text-green">classe mundial.</span></h2>
+        <p class="section-subtitle">Trabalhamos com os fabricantes líderes do mercado para garantir as melhores soluções.</p>
+      </div>
+      <div class="parceiros-grid reveal">
+        <div class="parceiro-card">
+          <div class="parceiro-name">Honeywell</div>
+          <div class="parceiro-badge">Parceiro Oficial</div>
+        </div>
+        <div class="parceiro-card">
+          <div class="parceiro-name">Bosch</div>
+          <div class="parceiro-badge">Segurança</div>
+        </div>
+        <div class="parceiro-card">
+          <div class="parceiro-name">Hikvision</div>
+          <div class="parceiro-badge">CFTV</div>
+        </div>
+        <div class="parceiro-card">
+          <div class="parceiro-name">Johnson Controls</div>
+          <div class="parceiro-badge">BMS / HVAC</div>
+        </div>
+        <div class="parceiro-card">
+          <div class="parceiro-name">Siemens</div>
+          <div class="parceiro-badge">Automação</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       CASES / PROJETOS DE REFERÊNCIA
+  ═══════════════════════════════════════════════════ -->
+  <section class="section cases-section" id="cases">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">CASES</div>
+        <h2 class="section-title">Projetos entregues em <span class="text-green">ambientes de missão crítica.</span></h2>
+        <p class="section-subtitle">Referências reais de implantação, comissionamento e manutenção nos ambientes mais exigentes do País.</p>
+      </div>
+
+      <div class="cases-grid">
+
+        <div class="case-card reveal" data-case="honeywell" role="button" tabindex="0" aria-label="Ver detalhes do case Honeywell Brasil">
+          <div class="case-header">
+            <div class="case-client-info">
+              <div class="case-client-name">Honeywell Brasil</div>
+              <div class="case-segment">Escritório Corporativo · São Paulo, SP</div>
+            </div>
+            <div class="case-badge">Concluído</div>
+          </div>
+          <div class="case-systems">
+            <span>EBI Enterprise</span>
+            <span>BMS Integrado</span>
+            <span>Pro-Watch SCA</span>
+          </div>
+          <p class="case-desc">
+            Integração de 14 subsistemas prediais em plataforma EBI unificada. Automação completa de HVAC, iluminação e controle de acesso com monitoramento centralizado 24/7.
+          </p>
+          <div class="case-results">
+            <div class="case-result-item">
+              <span class="case-result-val">14</span>
+              <span class="case-result-label">Subsistemas integrados</span>
+            </div>
+            <div class="case-result-item">
+              <span class="case-result-val">23%</span>
+              <span class="case-result-label">Redução de consumo energético</span>
+            </div>
+            <div class="case-result-item">
+              <span class="case-result-val">99,9%</span>
+              <span class="case-result-label">Uptime do sistema</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-card reveal reveal-delay" data-case="xp" role="button" tabindex="0" aria-label="Ver detalhes do case XP Investimentos">
+          <div class="case-header">
+            <div class="case-client-info">
+              <div class="case-client-name">XP Investimentos</div>
+              <div class="case-segment">Serviços Financeiros · Torre Faria Lima, SP</div>
+            </div>
+            <div class="case-badge">Concluído</div>
+          </div>
+          <div class="case-systems">
+            <span>CFTV 4K</span>
+            <span>SCA Biométrico</span>
+            <span>BMS HVAC</span>
+          </div>
+          <p class="case-desc">
+            Projeto executivo e implantação de CFTV com analytics de IA e controle de acesso biométrico em 4 andares de área restrita (trading floor). Integração com BMS para gestão energética.
+          </p>
+          <div class="case-results">
+            <div class="case-result-item">
+              <span class="case-result-val">247</span>
+              <span class="case-result-label">Câmeras IP instaladas</span>
+            </div>
+            <div class="case-result-item">
+              <span class="case-result-val">4</span>
+              <span class="case-result-label">Andares de acesso restrito</span>
+            </div>
+            <div class="case-result-item">
+              <span class="case-result-val">99,97%</span>
+              <span class="case-result-label">Disponibilidade SCA</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-card reveal reveal-delay" data-case="einstein" role="button" tabindex="0" aria-label="Ver detalhes do case Hospital Albert Einstein">
+          <div class="case-header">
+            <div class="case-client-info">
+              <div class="case-client-name">Hospital Israelita Albert Einstein</div>
+              <div class="case-segment">Saúde · Missão Crítica · São Paulo, SP</div>
+            </div>
+            <div class="case-badge case-badge--lifesafety">Life Safety</div>
+          </div>
+          <div class="case-systems">
+            <span>SDAI Notifier</span>
+            <span>Supressão</span>
+            <span>CFTV</span>
+            <span>BMS</span>
+          </div>
+          <p class="case-desc">
+            Implantação de sistema de detecção e alarme de incêndio de alta complexidade em ambiente hospitalar, com supressão por gás em salas de servidores e UTIs. Conformidade NFPA 72 e NBR 17240.
+          </p>
+          <div class="case-results">
+            <div class="case-result-item">
+              <span class="case-result-val">1.200+</span>
+              <span class="case-result-label">Pontos de detecção</span>
+            </div>
+            <div class="case-result-item">
+              <span class="case-result-val">0</span>
+              <span class="case-result-label">Falsos alarmes em 24 meses</span>
+            </div>
+            <div class="case-result-item">
+              <span class="case-result-val">NFPA</span>
+              <span class="case-result-label">Certificação completa</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-card reveal reveal-delay-2" data-case="viracopos" role="button" tabindex="0" aria-label="Ver detalhes do case Aeroporto de Viracopos">
+          <div class="case-header">
+            <div class="case-client-info">
+              <div class="case-client-name">Aeroporto Internacional de Viracopos</div>
+              <div class="case-segment">Infraestrutura Pública · Campinas, SP</div>
+            </div>
+            <div class="case-badge">Em operação</div>
+          </div>
+          <div class="case-systems">
+            <span>BMS EBI</span>
+            <span>CFTV</span>
+            <span>SCA</span>
+            <span>SDAI</span>
+          </div>
+          <p class="case-desc">
+            Gestão integrada de todos os sistemas de automação e segurança eletrônica do terminal de cargas e passageiros. Monitoramento remoto 24/7 com equipe de suporte on-site JumperFour.
+          </p>
+          <div class="case-results">
+            <div class="case-result-item">
+              <span class="case-result-val">48h</span>
+              <span class="case-result-label">SLA de atendimento crítico</span>
+            </div>
+            <div class="case-result-item">
+              <span class="case-result-val">+3 anos</span>
+              <span class="case-result-label">Contrato de manutenção ativo</span>
+            </div>
+            <div class="case-result-item">
+              <span class="case-result-val">100%</span>
+              <span class="case-result-label">Conformidade ANAC</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       CTA FAIXA
+  ═══════════════════════════════════════════════════ -->
+  <section class="cta-band" aria-label="Chamada para contato">
+    <div class="container cta-inner">
+      <div class="cta-text reveal">
+        <h2>Buscando eficiência e segurança para a sua edificação?</h2>
+        <p>Fale com um dos nossos analistas e descubra a solução ideal.</p>
+      </div>
+      <a href="#contato" class="btn-primary btn-large reveal reveal-delay">
+        Entrar em contato
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       CONTATO
+  ═══════════════════════════════════════════════════ -->
+  <section class="section contato-section" id="contato">
+    <div class="container">
+      <div class="contato-grid">
+        <div class="contato-info reveal">
+          <div class="section-label">CONTATO</div>
+          <h2 class="section-title">Vamos <span class="text-green">conversar?</span></h2>
+          <p class="section-body">Nossos analistas estão prontos para entender o seu projeto e propor a melhor solução técnica.</p>
+
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </div>
+              <div>
+                <strong>E-mail</strong>
+                <span>contato@jumperfour.com</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              </div>
+              <div>
+                <strong>Telefone / WhatsApp</strong>
+                <span>+55 (11) 9 9999-9999</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <div>
+                <strong>Localização</strong>
+                <span>São Paulo, SP — Brasil</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form class="contato-form reveal reveal-delay" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+            </div>
+            <div class="form-group">
+              <label for="empresa">Empresa</label>
+              <input type="text" id="empresa-input" name="empresa" placeholder="Nome da empresa">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" placeholder="seu@email.com.br" required>
+            </div>
+            <div class="form-group">
+              <label for="tel">Telefone</label>
+              <input type="tel" id="tel" name="tel" placeholder="(11) 9 9999-9999">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="servico">Serviço de interesse</label>
+            <select id="servico" name="servico">
+              <option value="">Selecione um serviço...</option>
+              <option>SDAI — Sistema de Detecção e Alarme de Incêndio</option>
+              <option>SCA — Sistema de Controle de Acesso</option>
+              <option>CFTV — Circuito Fechado de Televisão</option>
+              <option>BMS — Building Management System</option>
+              <option>EBI Honeywell</option>
+              <option>Carregadores de Veículos Elétricos</option>
+              <option>Infraestrutura de TI</option>
+              <option>Múltiplos serviços</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Descreva brevemente o seu projeto ou necessidade..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary btn-full" id="submitBtn">
+            Enviar mensagem
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          </button>
+          <div class="form-success" id="formSuccess" aria-live="polite">
+            ✓ Mensagem enviada! Retornaremos em breve.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════ -->
+  <footer class="footer" id="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#hero" class="logo">
+          <img src="logo.png" alt="JumperFour" class="logo-img">
+        </a>
+        <p>Tecnologia, Qualidade e Compromisso.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <strong>Soluções</strong>
+          <a href="#servicos">SDAI</a>
+          <a href="#servicos">SCA</a>
+          <a href="#servicos">CFTV</a>
+          <a href="#servicos">BMS</a>
+          <a href="#servicos">EBI Honeywell</a>
+          <a href="#servicos">Carregadores EV</a>
+        </div>
+        <div class="footer-col">
+          <strong>Empresa</strong>
+          <a href="#empresa">Sobre nós</a>
+          <a href="#metodologia">Metodologia</a>
+          <a href="#atuacao">Atuação</a>
+          <a href="#parceiros">Parceiros</a>
+          <a href="#cases">Cases</a>
+        </div>
+        <div class="footer-col">
+          <strong>Contato</strong>
+          <a href="#contato">Fale conosco</a>
+          <a href="https://jumperfour.com" target="_blank" rel="noopener">jumperfour.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <span>© 2025 JumperFour Tecnologia. Todos os direitos reservados.</span>
+        <span class="footer-badge">Desenvolvido por Everton F. Oliveira — 2026</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════
+       PORTAL DO CLIENTE MODAL (USER EXPERIENCE DEMO)
+  ═══════════════════════════════════════════════════ -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal-card login-modal-card">
+      <button class="modal-close" id="closeLoginBtn" aria-label="Fechar">&times;</button>
+
+      <!-- VIEW 1: LOGIN FORM -->
+      <div class="modal-view active" id="loginView">
+        <div class="modal-logo-wrapper">
+          <img src="logo.png" alt="JumperFour Logo" class="modal-logo">
+        </div>
+        <h2 class="modal-title">Portal do Cliente</h2>
+        <p class="modal-subtitle">Monitore sua edificação inteligente em tempo real e gerencie contratos.</p>
+        
+        <form class="modal-form" id="portalLoginForm">
+          <div class="form-group">
+            <label for="portalEmail">E-mail corporativo</label>
+            <input type="email" id="portalEmail" placeholder="exemplo@jumperfour.com" required autocomplete="username">
+          </div>
+          <div class="form-group">
+            <label for="portalPassword">Senha de acesso</label>
+            <input type="password" id="portalPassword" placeholder="••••••••" required autocomplete="current-password">
+          </div>
+          <div class="portal-form-options">
+            <label class="remember-me">
+              <input type="checkbox" checked> Lembrar-me
+            </label>
+            <a href="#" class="forgot-pass">Esqueceu a senha?</a>
+          </div>
+          <button type="submit" class="btn-primary btn-full">Entrar no Sistema</button>
+        </form>
+
+        <div class="demo-divider">
+          <span>OU EXPERIMENTE A DEMONSTRAÇÃO</span>
+        </div>
+
+        <button class="btn-ghost btn-full" id="demoLoginBtn">
+          Acessar como Demo (Experiência do Usuário)
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+
+      <!-- VIEW 2: INTERACTIVE DASHBOARD -->
+      <div class="modal-view" id="dashboardView">
+        <div class="dashboard-header">
+          <div>
+            <span class="user-welcome">XP Investimentos — Torre Faria Lima</span>
+            <h2 class="dashboard-title">Central de Monitoramento BMS</h2>
+          </div>
+          <span class="status-badge live">
+            <span class="pulse-dot"></span> Monitoramento Live
+          </span>
+        </div>
+
+        <div class="dashboard-stats-grid">
+          <!-- Stat 1 -->
+          <div class="dash-stat-card">
+            <div class="dstat-icon bms">⚡</div>
+            <div class="dstat-info">
+              <span class="dstat-label">BMS / HVAC</span>
+              <span class="dstat-val">22°C / Normal</span>
+              <span class="dstat-sub">Trading Floor — OK</span>
+            </div>
+          </div>
+          <!-- Stat 2 -->
+          <div class="dash-stat-card">
+            <div class="dstat-icon sca">🛡</div>
+            <div class="dstat-info">
+              <span class="dstat-label">Controle de Acesso</span>
+              <span class="dstat-val">842 acessos hoje</span>
+              <span class="dstat-sub">4 andares restritos OK</span>
+            </div>
+          </div>
+          <!-- Stat 3 -->
+          <div class="dash-stat-card">
+            <div class="dstat-icon sdai">🔥</div>
+            <div class="dstat-info">
+              <span class="dstat-label">SDAI Incêndio</span>
+              <span class="dstat-val">Sem ocorrências</span>
+              <span class="dstat-sub">1.200 pts · NFPA OK</span>
+            </div>
+          </div>
+          <!-- Stat 4 -->
+          <div class="dash-stat-card">
+            <div class="dstat-icon cftv">📷</div>
+            <div class="dstat-info">
+              <span class="dstat-label">CFTV Analytics</span>
+              <span class="dstat-val">247 câmeras</span>
+              <span class="dstat-sub">0 alertas ativos</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dashboard Details Section -->
+        <div class="dashboard-details">
+          <div class="dash-col main-detail">
+            <h3>Consumo de Energia Semanal (kWh)</h3>
+            <div class="mock-chart">
+              <div class="chart-bar" style="height: 58%;" data-day="Seg"><span>4.820</span></div>
+              <div class="chart-bar" style="height: 72%;" data-day="Ter"><span>6.100</span></div>
+              <div class="chart-bar" style="height: 80%;" data-day="Qua"><span>6.750</span></div>
+              <div class="chart-bar" style="height: 68%;" data-day="Qui"><span>5.710</span></div>
+              <div class="chart-bar active" style="height: 91%;" data-day="Sex"><span>7.640</span></div>
+              <div class="chart-bar" style="height: 22%;" data-day="Sáb"><span>1.840</span></div>
+              <div class="chart-bar" style="height: 10%;" data-day="Dom"><span>830</span></div>
+            </div>
+            <div class="chart-summary">
+              <span class="text-green">⚡ Economia de 18%</span> obtida esta semana com a automação HVAC via BMS Honeywell EBI — redução de carga fora do horário de pico.
+            </div>
+          </div>
+          <div class="dash-col side-detail">
+            <h3>Histórico de Ocorrências</h3>
+            <div class="log-list">
+              <div class="log-item done">
+                <span class="log-status">Concluída</span>
+                <span class="log-title">Revisão semestral SDAI — Torre Faria Lima</span>
+                <span class="log-date">Ontem às 09:15</span>
+              </div>
+              <div class="log-item pending">
+                <span class="log-status">Agendada</span>
+                <span class="log-title">Manutenção preventiva CFTV — andar 14</span>
+                <span class="log-date">07/07/2026</span>
+              </div>
+              <div class="log-item info">
+                <span class="log-status">Atualizado</span>
+                <span class="log-title">Firmware Honeywell EBI v11.2 aplicado</span>
+                <span class="log-date">25/06/2026</span>
+              </div>
+              <div class="log-item done">
+                <span class="log-status">Concluída</span>
+                <span class="log-title">Expansão SCA — novo acesso biométrico andar 8</span>
+                <span class="log-date">18/06/2026</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dashboard-footer">
+          <button class="btn-ghost" id="openSupportBtn">Abrir Chamado Técnico</button>
+          <button class="btn-ghost" id="logoutBtn" style="border-color: rgba(220,53,69,0.3); color: #dc3545;">Sair do Portal</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════
+       CASE DETAIL MODAL
+  ═══════════════════════════════════════════════════ -->
+  <div class="modal-overlay" id="caseModal" role="dialog" aria-modal="true" aria-labelledby="caseModalTitle">
+    <div class="modal-card case-modal-card">
+      <button class="modal-close" id="closeCaseBtn" aria-label="Fechar">&times;</button>
+      <div id="caseModalContent"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
